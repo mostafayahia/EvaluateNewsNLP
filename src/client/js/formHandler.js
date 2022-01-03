@@ -2,7 +2,7 @@ async function handleSubmit(event) {
     event.preventDefault()
 
     // check what text was put into the form field
-    let formText = document.getElementById('text').value.trim()
+    let formText = document.getElementById('text').value
 
     const subjectivityElement = document.getElementById('subjectivity');
     const confidenceElement = document.getElementById('confidence');
@@ -23,6 +23,10 @@ async function handleSubmit(event) {
     }
 
     console.log("::: Form Submitted :::")
+
+    // clear form result from previous result (if exist)
+    resetFormResult(); 
+
     const res = await fetch('http://localhost:8081/nlp', {
         method: 'POST',
         headers: {
