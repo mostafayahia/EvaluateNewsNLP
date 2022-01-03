@@ -4,6 +4,9 @@ const mockAPIResponse = require('./mockAPI.js')
 
 const app = express()
 
+require('dotenv').config()
+console.log('api-key', process.env.API_KEY)
+
 app.use(express.static('dist'))
 
 console.log(__dirname)
