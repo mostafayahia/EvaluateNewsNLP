@@ -11,6 +11,10 @@ module.exports = merge(common, {
     stats: 'verbose',
     module: {
         rules: [
+            {
+                test: /\.scss$/,
+                use: ['style-loader', 'css-loader', 'sass-loader']
+            }
         ]
     },
     plugins: [
