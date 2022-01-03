@@ -1,13 +1,16 @@
 var path = require('path')
 const express = require('express')
 const mockAPIResponse = require('./mockAPI.js')
+const request = require('request');
 
 const app = express()
 
 require('dotenv').config()
-console.log('api-key', process.env.API_KEY)
 
 app.use(express.static('dist'))
+
+const bodyParser = require('body-parser');
+app.use(bodyParser.json())
 
 console.log(__dirname)
 
@@ -23,4 +26,21 @@ app.listen(port, function () {
 
 app.get('/test', function (req, res) {
     res.send(mockAPIResponse)
+})
+
+app.post('/nlp', function (req, res) {
+    
+    request({
+        uri: 'https://api.meaningcloud.com/sentiment-2.1',
+        method: 'POST',
+        form: {
+            key: process.env.API_KEY,
+            txt: req.body.text,
+            lang: 'en'
+        }
+    }, (err, response, body) => {
+        res.send(body);
+    })
+
+
 })
