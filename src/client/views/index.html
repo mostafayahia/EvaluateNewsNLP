@@ -19,14 +19,19 @@
         <main>
             <section>
                 <form class="" onsubmit="return Client.handleSubmit(event)">
-                    <input id="name" type="text" name="input" value="" placeholder="Name">
+                    <input id="text" type="text" name="input" value="" placeholder="Text">
                     <input type="submit" name="" value="submit">
                 </form>
             </section>
 
             <section>
                 <strong>Form Results:</strong>
-                <div id="results"></div>
+                <div id="results">
+                    <p>Subjectivity: <span id="subjectivity"></span></p>
+                    <p>Agreement: <span id="agreement"></span></p>
+                    <p>Confidence: <span id="confidence"></span></p>
+                    <p>Irony: <span id="irony"></span></p>
+                </div>
             </section>
         </main>
 
