@@ -5,6 +5,10 @@ module.exports = merge(common, {
     mode: 'production',
     module: {
         rules: [
+            {
+                test: /\.scss$/,
+                use: ['css-loader', 'sass-loader']
+            }
         ]
     },
     plugins: [
