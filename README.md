@@ -18,12 +18,16 @@ You can have a copy of the starter code of the project from [here](https://githu
 I've done this project using the help of [Stack Overflow](https://stackoverflow.com/).<br><br>
 
 ## Run-App
-You can run the project by simply navigating to the root directory of the project then run the following commands:
-```
-npm install #run only if node_modules directory not exist
-npm run build-dev # start webpack-dev-server on port 8080(default)
-npm run test # run test suites for the project
+- Create `.env` file in the root directory (if not exist), then inside it, put your [CloudMeaning API](https://www.meaningcloud.com/developer/apis) key like
+  ```
+  API_KEY=****************************
+  ```
+- You can run the project by simply navigating to the root directory of the project then run the following commands:
+  ```
+  npm install #run only if node_modules directory not exist
+  npm run build-dev # start webpack-dev-server on port 8080(default)
+  npm run test # run test suites for the project
 
-npm run start # starting express server on port 8081
-npm run build-prod # build project in dist directory and can check result on express server(localhost:8081)
-```
+  npm run start # starting express server on port 8081
+  npm run build-prod # build project in dist directory and can check result on express server(localhost:8081)
+  ```
